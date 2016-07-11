@@ -36,6 +36,7 @@
             <ComboBoxItem x:Name="cbiTrue" Content="true"/>
             <ComboBoxItem x:Name="cbiFalse" Content="false" />
         </ComboBox>
+        <Button x:Name="btnRealizar" Content="Tornar realizado" HorizontalAlignment="Left" Margin="344,39,0,0" VerticalAlignment="Top" Width="143" Click="btnRealizar_Click"/>
 
     </Grid>
 </Window>
