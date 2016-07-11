@@ -93,11 +93,7 @@ namespace ClienteCompromisso
             
             HttpClient httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri(ip);
-            var response = await httpClient.GetAsync("/20131011110380/api/compromisso");
-            var str = response.Content.ReadAsStringAsync().Result;
-            List<Models.Compromisso> obj = JsonConvert.DeserializeObject<List<Models.Compromisso>>(str);
-            int id = ((Models.Compromisso)ListBoxCompromissos.SelectedItem).Id;
-            Models.Compromisso c = (from comp in obj where comp.Id == id select comp).Single();
+            Models.Compromisso c = (Models.Compromisso)ListBoxCompromissos.SelectedItem;
             c.Realizado = true;
             string s = "=" + JsonConvert.SerializeObject(c);
             var content = new StringContent(s, Encoding.UTF8,
